@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 
 import java.awt.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,9 +39,11 @@ public class Bot extends ListenerAdapter {
         if(author.isBot()) return;
 
         if(msg.equalsIgnoreCase("!plan")) {
-            ScrapTimetable.setDate(LocalDate.now().toString());
-            ScrapTimetable.setId("-34");
 
+            ScrapTimetable.setDate(LocalDate.now().plusDays(LocalTime.now().getHour() >= 19 ? 1 : 0).toString());
+
+
+            ScrapTimetable.setId("-34");
             Root timetable = ScrapTimetable.post();
             Teachers teachers = TeacherShortcuts.get();
             Classrooms classrooms = ClassroomShortcuts.get();

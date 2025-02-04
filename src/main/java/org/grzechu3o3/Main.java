@@ -1,13 +1,15 @@
 package org.grzechu3o3;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-       //ustawienie daty
+       /*
+        //ustawienie daty
        ScrapTimetable.setDate(LocalDate.now().toString());
        //wybor grupy
        ScrapTimetable.setId("-34");
@@ -86,8 +88,8 @@ public class Main {
             System.out.println("Couldn't get timetable");
         }
 
-
-
+*/
+        System.out.println();
 
     }
 }
